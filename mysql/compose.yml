@@ -1,0 +1,14 @@
+services:
+  mysql-test:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: sdcfasdcads%d
+      MYSQL_DATABASE: tests
+    ports:
+    - '3306:3306'
+    volumes:
+    - mysql-test:/var/lib/mysql
+
+volumes:
+  mysql-test:
