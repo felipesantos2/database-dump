@@ -10,3 +10,6 @@ create table users (
 
 insert into users (name, email) values('Felipe', 'felipe@email.com');
 insert into users (name, email) values('Admin', 'admin@email.com');
+insert into users (name, email) values('Supervisor', 'supervisor@email.com');
+insert into users (name, email) values('Edileia', 'edileia@email.com');
+insert into users (name, email) values('Florsina', 'florsina@email.com');

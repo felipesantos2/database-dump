@@ -8,7 +8,8 @@ services:
     ports:
     - '3306:3306'
     volumes:
-    - mysql_data_test:/var/lib/mysql
+      - mysql_data_test:/var/lib/mysql
+      - ./create-first-table.sql:/docker-entrypoint-initdb.d/create-first-table.sql
 
 volumes:
   mysql_data_test:
