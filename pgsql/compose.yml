@@ -3,12 +3,33 @@ services:
     image: postgres:18.3-alpine3.23
     restart: always
     environment:
-      POSTGRES_PASSWORD: sdcfasdcads%d
       POSTGRES_DB: tests
+      POSTGRES_PASSWORD: root
     ports:
     - '5432:5432'
     volumes:
     - postgres-test:/var/lib/postgres
-    
+    networks:
+      - default
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: felipe@admin.com
+      PGADMIN_DEFAULT_PASSWORD: root
+    ports:
+      - '8080:80'
+    volumes:
+      - postgres-test:/var/lib/pgadmin
+    networks:
+      - default
+    depends_on:
+      - postgres-test
+
 volumes:
   postgres-test:
+
+networks:
+  default:
+    name: local-network
