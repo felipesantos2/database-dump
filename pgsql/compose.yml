@@ -3,12 +3,12 @@ services:
     image: postgres:18.3-alpine3.23
     restart: always
     environment:
-      POSTGRES_DB: tests
+      POSTGRES_DB: test_db
       POSTGRES_PASSWORD: root
     ports:
     - '5432:5432'
     volumes:
-    - postgres-test:/var/lib/postgres
+    - postgres_test_data:/var/lib/postgres
     networks:
       - default
 
@@ -21,15 +21,16 @@ services:
     ports:
       - '8080:80'
     volumes:
-      - postgres-test:/var/lib/pgadmin
+      - pgadmin_test_data:/var/lib/pgadmin
     networks:
       - default
     depends_on:
       - postgres-test
 
 volumes:
-  postgres-test:
+  pgadmin_test_data:
+  postgres_test_data:
 
 networks:
   default:
-    name: local-network
+    name: postgres_test_network
