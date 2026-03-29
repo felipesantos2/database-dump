@@ -3,7 +3,7 @@ services:
     image: mysql:latest
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: sdcfasdcads%d
+      MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: tests
     ports:
     - '3306:3306'
