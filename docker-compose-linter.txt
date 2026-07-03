@@ -1,0 +1,5 @@
+docker run -it --rm -v ${PWD}:/app \
+  zavoloklom/dclint docker-compose.yml 
+
+docker run -it --rm -v ${PWD}:/app \
+  zavoloklom/dclint docker-compose.yml --fix

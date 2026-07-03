@@ -1,8 +1,10 @@
 use test_db;
+
 create table users (
     id int auto_increment primary key,
     name varchar(200) not null,
     email varchar(200) null unique,
+    password varchar(200) null,
   	deleted_at datetime null,
   	created_at datetime null default current_timestamp, 
     updated_at datetime null default current_timestamp on update current_timestamp  
