@@ -1,5 +1,5 @@
+name: pg-server
 services:
-
   pgadmin:
     image: dpage/pgadmin4
     container_name: pgadmin
@@ -28,7 +28,7 @@ services:
     networks:
       - default
     restart: always
-    
+
 networks:
   default:
     name: postgres_test_network
